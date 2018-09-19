@@ -1,0 +1,29 @@
+<div class="text-center" style="padding-top: 100px">
+  <div *ngIf="!user" class="card text-center" style="padding: 25px">
+    <h6 class="card-header">
+      Demo inicio de sesion
+    </h6>
+    <div class="card-block">
+      <h4 class="card-title">Aun no esta logueado</h4>
+      <p class="card-text">Inciar sesion con:</p>
+    </div>
+    <div class="card-block">
+      <button class="btn-social gb btn" (click)="signInWithGoogle()">Iniciar Sesión con Google</button>
+      <button class="btn-social fb btn" (click)="signInWithFB()">Iniciar Sesión con Facebook</button>
+    </div>
+  </div>
+  <div *ngIf="user" class="card text-center" style="padding: 25px">
+    <h6 class="card-header">
+      Demo inicio de sesion
+    </h6>
+    <div class="card-block"></div>
+    <img class="card-img-top img-responsive photo" src="{{ user.photoUrl }}">
+    <div class="card-block">
+      <h4 class="card-title">{{ user.name }}</h4>
+      <p class="card-text">{{ user.email }}</p>
+    </div>
+    <div class="card-block">
+      <button class="btn btn-danger" (click)="signOut()">Cerrar Sesión</button>
+    </div>
+  </div>
+</div>
